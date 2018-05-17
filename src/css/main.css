@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+  
+body {
+    margin: 0;
+    padding: 0;
+    background: #e41414;
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    height: 100%;
+    padding-bottom: 100px;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-start;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    background: #fb9c06;
+}
+
+.createWindow {
+    width: 200px;
+    height: 30px;
+    font-size: 1.2rem;
+    margin: 20px;
+}
+
+.popUpWindow {
+    border: 3px solid #7f63d8;
+    background: #550b5f;
+}
+
+.containerForWindows {
+    height: 100%;
+    background: #07a00f;
+}
+
+.initialSizeWindow {
+    position: absolute;
+    width: 700px;
+    height: 500px;
+}
+
+.minimizeSizeWindow {
+    width: 200px;
+    height: 100px;
+}
+
+.maximizeSizeWindow {
+    width: 100%;
+    height: 100%;
+}
+
+.buttonPanel {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background: #400747;
+}
+
+.controlButtons {
+    height: 25px;
+    width: 50px;
+    background-image: url(../image/controlButtons.png);
+    background-repeat: no-repeat;
+    background-size: 200px;
+}
+
+.collapseWindow {
+    background-position: -13px -9px;
+}
+
+.maximizeWindow {
+    background-position: -77px -9px;
+}
+
+.closeWindow {
+    background-position: -140px -9px;
+}
+
+.windowContent {
+    font-size: 1.8em;
+}
+
