@@ -1,0 +1,54 @@
+:host {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px 10px;
+}
+
+.editButton {
+    background-position: -130px -6px;
+}
+
+.deleteButton {
+    background-position: -230px -6px;
+}
+
+p {
+    margin: 0;
+}
+
+.boxforBG {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    background-repeat: no-repeat;
+    background-image: url('../../image/sprite.png');
+    background-blend-mode: darken;
+}
+
+.leftPart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+}
+
+.rightPart {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 15%;
+}
+
+.box{
+    display: flex;
+    justify-content: space-around;
+}
+
+.editBox{
+    flex-direction: column;
+}

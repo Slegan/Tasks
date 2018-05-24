@@ -1,0 +1,13 @@
+<div class="logo"> Repositories control system  </div>
+<div class="searchPanel">
+    <label>Enter the github user name</label>
+    <input [(ngModel)]="userName" 
+    placeholder="Find user" 
+    autofocus=true 
+    (keyup.enter)=getRepos()
+    >
+<button 
+  class="btn btn-primary searchButton" 
+  (click)=getRepos()
+  ></button>
+</div>

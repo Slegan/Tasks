@@ -1,0 +1,37 @@
+<p><b>{{ issue.title }}</b></p> 
+<p><em>{{ issue.body }}</em></p>
+<div *ngIf="commentsList">  
+  <p *ngFor="let comment of commentsList"
+  class="comment"
+  >{{ comment.body }}</p>
+</div> 
+<div class="buttonBox">
+  <button class="btn btn-primary"
+    (click)=getcomments()
+    [disabled]="!disabled">Load comments
+  </button>
+  <button class="btn btn-primary"
+    [disabled]="disabled"
+    (click)=openModal(addNewCommentModal)>Add new comment
+  </button>
+</div>
+
+<ng-template #addNewCommentModal>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Write your comment</h4>
+        <button type="button" class="close pull-right" 
+                aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="editBox">
+          <textarea cols="30" rows="5" placeholder="Description" 
+            [(ngModel)] = "newComment" ></textarea>
+          <button type="button" class="btn btn-success"
+            (click)="addNewComment(addNewCommentModal)"
+          >Ok</button>
+        </div>
+    </div>
+    
+</ng-template>

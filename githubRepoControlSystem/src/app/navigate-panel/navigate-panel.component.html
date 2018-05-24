@@ -1,0 +1,58 @@
+<div *ngIf="repoName; else elseBlock">  
+  <button class="btn btn-primary myBtn"
+    (click)="openModal(createNewIssueModal);">Add new issue
+  </button>
+  
+  <button 
+    class="btn btn-primary myBtn"
+    routerLink="/{{userName}}/repos">Go back
+  </button>
+</div>
+
+<ng-template #elseBlock>
+  <div class="sortBox">
+    <label>Sort direction:</label>
+    <button 
+      class="btn btn-primary myBtn"
+      (click)="sortByName()">{{ sortDirection }}
+    </button>
+  </div>
+
+  <div class="filterBox">
+    <label>Filter by language</label>
+    <input [(ngModel)]="language"
+      (keyup.enter)=filterByLanguage()
+    >
+    <button 
+      class="btn btn-primary searchButton myBtn" 
+      (click)=filterByLanguage()
+    ></button>
+  </div>
+
+  <button 
+    class="btn btn-primary"
+    (click)="showAllRepos()">Show all repositories
+  </button>
+</ng-template>
+
+<ng-template #createNewIssueModal>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Describe the issue</h4>
+        <button type="button" class="close pull-right" 
+                aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="editBox">
+          <input class="modalInput" type="text" placeholder="Issue title"
+            [(ngModel)] = "newIssueName">
+          <textarea cols="30" rows="5" placeholder="Description" 
+            [(ngModel)] = "newIssueDescription" ></textarea>
+          <button type="button" class="btn btn-success"
+            (click)="createNewIssue(createNewIssueModal)"
+          >Ok</button>
+        </div>
+    </div>
+    
+</ng-template>

@@ -1,0 +1,7 @@
+<app-navigate-panel></app-navigate-panel>
+<app-repository
+  *ngFor="let repository of reposList"
+  [repository] = "repository"
+  (click)=getIssues(repository)
+  routerLink="/{{userName}}/{{repository.name}}/issues"
+  ></app-repository>

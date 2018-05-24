@@ -1,0 +1,56 @@
+<div class="leftPart">
+  <p><b>{{ repository.name }}</b></p> 
+  <p><em>{{ repository.description }}</em></p> 
+  <p>{{ repository.language }}</p>
+</div>
+<div class="rightPart">
+  <button class="btn btn-primary editButton boxforBG"
+  (click)="openModal($event, editRepositoryModal);">
+  </button>
+  <button class="btn btn-primary deleteButton boxforBG"
+  (click)="openModal($event, deleteRepositoryModal)">
+  </button>
+</div>
+
+<ng-template #editRepositoryModal>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Edit repository {{ repository.name }}</h4>
+        <button type="button" class="close pull-right" 
+              aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="box editBox">
+          <input type="text" placeholder="Enter new repository name"
+            [(ngModel)] = "newRepositoryName" maxlength="25">
+          <textarea cols="30" rows="5" placeholder="Description" 
+            [(ngModel)] = "newDescription" ></textarea>
+          <button type="button" class="btn btn-success"
+            (click)="editRepository(editRepositoryModal)"
+          >Ok</button>
+        </div>
+    </div>
+    
+</ng-template>
+
+<ng-template #deleteRepositoryModal>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Delete repository {{ repository.name }}</h4>
+        <button type="button" class="close pull-right" 
+                aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="box">
+          <button type="button" class="btn btn-primary"
+            (click)="deleteRepository(deleteRepositoryModal)"
+          >Yes</button>
+          <button type="button" class="btn btn-primary"
+            (click)="closeModal(deleteRepositoryModal)"
+          >No</button>
+        </div>
+    </div>
+    
+</ng-template>
